@@ -1,4 +1,4 @@
-import contactStyles from "./contactMe.module.css";
+import contactStyles from "./contactme.module.css";
 import Navbar from "../../component/navbar/Navbar";
 
 const ContactMe = () => {
