@@ -1,0 +1,486 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.contactPage {
+  width: 100%;
+  background-color: #f7f3ee;
+  color: #17130f;
+  overflow: hidden;
+}
+
+/* =========================================================
+     HERO
+  ========================================================= */
+
+.contactHero {
+  min-height: 55vh;
+  display: flex;
+  align-items: center;
+  padding: 80px 8%;
+  background-color: #eee5da;
+  position: relative;
+  overflow: hidden;
+}
+
+.contactHero::after {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background-color: #e2d2c1;
+  right: -130px;
+  top: -170px;
+}
+
+.heroContent {
+  max-width: 760px;
+  position: relative;
+  z-index: 2;
+}
+
+.heroLabel,
+.sectionLabel,
+.formHeading > p,
+.availabilityHeading > p,
+.experienceSection > div:first-child > p,
+.contactCTA > p:first-child {
+  color: #6b4933;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.heroContent h1 {
+  margin-top: 20px;
+  font-family: "Cinzel Decorative", serif;
+  font-size: 60px;
+  line-height: 1.15;
+  font-weight: 500;
+  color: #17130f;
+}
+
+.heroContent h1 span {
+  color: #6b4933;
+}
+
+.heroText {
+  max-width: 620px;
+  margin-top: 25px;
+  color: #17130f;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+     CONTACT SECTION
+  ========================================================= */
+
+.contactSection {
+  padding: 110px 8%;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 100px;
+  background-color: #f7f3ee;
+}
+
+.contactInfo h2,
+.availabilityHeading h2,
+.experienceSection h2 {
+  margin-top: 15px;
+  font-family: "Cinzel Decorative", serif;
+  font-size: 42px;
+  line-height: 1.3;
+  font-weight: 500;
+  color: #17130f;
+}
+
+.introText {
+  max-width: 520px;
+  margin-top: 25px;
+  color: #51483f;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+     CONTACT DETAILS
+  ========================================================= */
+
+.contactDetails {
+  margin-top: 50px;
+  border-top: 1px solid #d4c8bc;
+}
+
+.contactItem {
+  display: flex;
+  gap: 25px;
+  padding: 25px 0;
+  border-bottom: 1px solid #d4c8bc;
+}
+
+.contactItem > span {
+  min-width: 25px;
+  color: #6b4933;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.contactItem h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #17130f;
+}
+
+.contactItem a,
+.contactItem p {
+  display: block;
+  margin-top: 6px;
+  color: #51483f;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.contactItem a:hover {
+  color: #6b4933;
+}
+
+/* =========================================================
+     MESSAGE FORM
+  ========================================================= */
+
+.formContainer {
+  padding: 45px;
+  background-color: #eee5da;
+  border: 1px solid #d9cabb;
+}
+
+.formHeading h3 {
+  margin-top: 12px;
+  font-family: "Cinzel Decorative", serif;
+  font-size: 28px;
+  font-weight: 500;
+  color: #17130f;
+}
+
+.formContainer form {
+  margin-top: 40px;
+}
+
+.formGroup {
+  margin-bottom: 25px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 9px;
+  color: #17130f;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 14px 15px;
+  border: 1px solid #d0c1b2;
+  outline: none;
+  background-color: #f7f3ee;
+  color: #17130f;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  transition: 0.3s ease;
+}
+
+.formGroup textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  border-color: #6b4933;
+}
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+  color: #958a80;
+}
+
+.formContainer button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  background-color: #6b4933;
+  color: #f7f3ee;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.formContainer button:hover {
+  background-color: #17130f;
+}
+
+/* =========================================================
+     AVAILABILITY
+  ========================================================= */
+
+.availability {
+  padding: 100px 8%;
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 100px;
+  background-color: #eee5da;
+}
+
+.availabilityContent > p {
+  max-width: 600px;
+  color: #51483f;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.availabilityList {
+  margin-top: 40px;
+  border-top: 1px solid #d4c8bc;
+}
+
+.availabilityList div {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 20px 0;
+  border-bottom: 1px solid #d4c8bc;
+}
+
+.availabilityList span {
+  min-width: 25px;
+  color: #6b4933;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.availabilityList p {
+  color: #17130f;
+  font-size: 14px;
+}
+
+/* =========================================================
+     CTA
+  ========================================================= */
+
+.contactCTA {
+  padding: 100px 20px;
+  text-align: center;
+  background-color: #6b4933;
+  color: #f7f3ee;
+}
+
+.contactCTA > p:first-child {
+  color: #e4d5c5;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.contactCTA h2 {
+  margin: 20px 0 35px;
+  font-family: "Cinzel Decorative", serif;
+  font-size: 45px;
+  line-height: 1.3;
+  font-weight: 500;
+}
+
+.contactCTA a {
+  display: inline-block;
+  padding: 15px 28px;
+
+  background-color: #f7f3ee;
+  color: #6b4933;
+
+  font-size: 13px;
+  text-decoration: none;
+
+  transition: 0.3s ease;
+}
+
+.contactCTA a:hover {
+  background-color: #17130f;
+  color: #f7f3ee;
+}
+
+/* =========================================================
+     FOOTER
+  ========================================================= */
+
+.footer {
+  padding: 50px 8%;
+  background-color: #17130f;
+  color: #f7f3ee;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+
+  gap: 30px;
+
+  align-items: center;
+}
+
+.footer h3 {
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.footer p {
+  margin-top: 7px;
+  color: #bdb4ac;
+  font-size: 12px;
+}
+
+.footerLinks {
+  display: flex;
+  gap: 25px;
+}
+
+.footerLinks a {
+  color: #d8d0c8;
+  text-decoration: none;
+  font-size: 12px;
+  transition: 0.3s ease;
+}
+
+.footerLinks a:hover {
+  color: #c7a98b;
+}
+
+.copyright {
+  grid-column: 1 / -1;
+  padding-top: 20px;
+  border-top: 1px solid #3b3129;
+}
+
+/* =========================================================
+     TABLET
+  ========================================================= */
+
+@media (max-width: 900px) {
+  .heroContent h1 {
+    font-size: 48px;
+  }
+
+  .contactSection,
+  .availability,
+  .experienceSection {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .formContainer {
+    padding: 35px;
+  }
+
+  .experienceSection {
+    gap: 50px;
+  }
+}
+
+/* =========================================================
+     MOBILE
+  ========================================================= */
+
+@media (max-width: 600px) {
+  /* HERO */
+
+  .contactHero {
+    min-height: 60vh;
+    padding: 60px 25px;
+  }
+
+  .heroContent h1 {
+    font-size: 36px;
+  }
+
+  .heroText {
+    font-size: 13px;
+  }
+
+  /* SECTIONS */
+
+  .contactSection,
+  .availability,
+  .experienceSection {
+    padding: 70px 25px;
+  }
+
+  /* HEADINGS */
+
+  .contactInfo h2,
+  .availabilityHeading h2,
+  .experienceSection h2 {
+    font-size: 30px;
+  }
+
+  /* CONTACT FORM */
+
+  .formContainer {
+    padding: 25px;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  /* EXPERIENCE */
+
+  .experienceLinks {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+    margin-top: 25px;
+  }
+
+  .experienceLinks a {
+    width: 100%;
+    padding: 15px 20px;
+    text-align: center;
+  }
+
+  /* CTA */
+
+  .contactCTA {
+    padding: 80px 25px;
+  }
+
+  .contactCTA h2 {
+    font-size: 32px;
+  }
+
+  /* FOOTER */
+
+  .footer {
+    grid-template-columns: 1fr;
+    padding: 40px 25px;
+  }
+
+  .footerLinks {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}

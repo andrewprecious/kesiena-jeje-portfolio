@@ -1,0 +1,338 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ================================
+     HERO
+  ================================ */
+
+.hero {
+  position: relative;
+  min-height: 650px;
+  overflow: hidden;
+  background-color: #f8f5f1;
+}
+
+/* ================================
+     WHITE CLOUD SECTION
+  ================================ */
+
+.heroCloud {
+  position: relative;
+  z-index: 2;
+  width: 50%;
+  min-height: 650px;
+  padding: 70px 70px 50px 80px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Large curved white cloud */
+
+.heroCloud::after {
+  content: "";
+  position: absolute;
+  top: -15%;
+  right: -180px;
+  width: 350px;
+  height: 130%;
+  background-color: #ffffff;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+/* ================================
+     HERO DESCRIPTION
+  ================================ */
+
+.heroCloudDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  color: #6b4933;
+}
+
+.heroCloudDescription h3 {
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.heroCloudDescriptionLine {
+  width: 50px;
+  height: 2px;
+
+  background-color: #6b4933;
+}
+
+.heroCloudDescriptionName {
+  color: #17130f;
+  font-size: 55px;
+  font-family: "Cinzel Decorative", serif;
+}
+
+.heroCloudDescriptionSub {
+  color: #6b4933;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.heroCloudDescriptionInfo {
+  max-width: 400px;
+  /* border: 1px solid red; */
+  color: #17130f;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+/* ================================
+     QUALITIES
+  ================================ */
+
+.heroCloudMore {
+  display: flex;
+  gap: 25px;
+}
+
+.heroCloudMoreCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+}
+
+.heroCloudMoreCard img {
+  width: 24px;
+  height: 24px;
+}
+
+.heroCloudMoreCard p {
+  color: #17130f;
+  font-size: 11px;
+  text-align: center;
+}
+
+/* ================================
+     BUTTONS
+  ================================ */
+
+.heroCloudBtns {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.heroCloudBtns a {
+  text-decoration: none;
+}
+
+.heroCloudBtnOne,
+.heroCloudBtnTwo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 22px;
+  border-radius: 4px;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* View My Work */
+
+.heroCloudBtnOne {
+  background-color: #6b4933;
+  color: #ffffff;
+  border: 1px solid #6b4933;
+}
+
+/* Contact Me */
+
+.heroCloudBtnTwo {
+  background-color: transparent;
+  color: #6b4933;
+  border: 1px solid #6b4933;
+}
+
+.heroCloudBtnOne p,
+.heroCloudBtnTwo p {
+  margin: 0;
+}
+
+/* ================================
+     RIGHT IMAGE
+  ================================ */
+
+.heroImg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 58%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.heroImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ================================
+     TABLET
+  ================================ */
+
+@media (max-width: 1000px) {
+  .heroCloud {
+    width: 65%;
+
+    padding: 60px 50px;
+  }
+
+  .heroImg {
+    width: 55%;
+  }
+
+  .heroCloudDescriptionName {
+    font-size: 45px;
+  }
+
+  .heroCloudMore {
+    gap: 15px;
+  }
+}
+
+/* ================================
+     MOBILE
+  ================================ */
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+  }
+
+  .heroCloud {
+    width: 100%;
+
+    min-height: auto;
+
+    padding: 50px 25px 40px;
+
+    gap: 25px;
+  }
+
+  /* Remove cloud curve on mobile */
+
+  .heroCloud::after {
+    display: none;
+  }
+
+  .heroCloudDescriptionName {
+    font-size: 38px;
+  }
+
+  .heroCloudDescriptionSub {
+    font-size: 18px;
+  }
+
+  .heroCloudDescriptionInfo {
+    max-width: 100%;
+
+    font-size: 13px;
+  }
+
+  .heroCloudMore {
+    gap: 15px;
+
+    justify-content: space-between;
+  }
+
+  .heroCloudMoreCard {
+    flex: 1;
+  }
+
+  .heroCloudMoreCard p {
+    font-size: 10px;
+  }
+
+  .heroCloudBtns {
+    width: 100%;
+  }
+
+  .heroCloudBtnOne,
+  .heroCloudBtnTwo {
+    flex: 1;
+
+    padding: 12px 10px;
+  }
+
+  .heroImg {
+    position: relative;
+
+    width: 100%;
+    height: 450px;
+
+    top: auto;
+    right: auto;
+  }
+}
+
+/* ================================
+     SMALL MOBILE
+  ================================ */
+
+@media (max-width: 450px) {
+  .heroCloud {
+    padding: 40px 20px 35px;
+  }
+
+  .heroCloudDescriptionName {
+    font-size: 32px;
+  }
+
+  .heroCloudDescriptionSub {
+    font-size: 16px;
+  }
+
+  .heroCloudMore {
+    gap: 5px;
+  }
+
+  .heroCloudMoreCard img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .heroCloudMoreCard p {
+    font-size: 9px;
+  }
+
+  .heroCloudBtns {
+    flex-direction: column;
+  }
+
+  .heroCloudBtnOne,
+  .heroCloudBtnTwo {
+    width: 100%;
+  }
+
+  .heroImg {
+    height: 380px;
+  }
+}
