@@ -44,7 +44,7 @@ const ContactMe = () => {
             discuss an available position or opportunity.
           </p>
 
-          {/* CONTACT DETAILS */}
+          {/* ================= CONTACT DETAILS ================= */}
           <div className={contactStyles.contactDetails}>
             {/* PHONE */}
             <div className={contactStyles.contactItem}>
@@ -81,8 +81,8 @@ const ContactMe = () => {
               <div>
                 <h3>Email</h3>
 
-                <a href="mailto:kessyafricana@gmail.com@gmail.com">
-                  kessyafricana@gmail.com@gmail.com
+                <a href="mailto:kessyafricana@gmail.com">
+                  kessyafricana@gmail.com
                 </a>
               </div>
             </div>
@@ -96,6 +96,39 @@ const ContactMe = () => {
 
                 <p>Delta State, Nigeria</p>
               </div>
+            </div>
+          </div>
+
+          {/* ================= CV ================= */}
+          <div className={contactStyles.cvSection}>
+            <p className={contactStyles.sectionLabel}>CURRICULUM VITAE</p>
+
+            <h3>View my professional CV</h3>
+
+            <p>
+              Learn more about my 16 years of experience in furniture making,
+              installation, assembly, maintenance and repairs.
+            </p>
+
+            <div className={contactStyles.cvButtons}>
+              {/* VIEW CV */}
+              <a
+                href="/Kesiena-Jeje-CV.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className={contactStyles.viewCv}
+              >
+                View CV →
+              </a>
+
+              {/* DOWNLOAD CV */}
+              <a
+                href="/Kesiena-Jeje-CV.pdf"
+                download="Kesiena-Jeje-CV.pdf"
+                className={contactStyles.downloadCv}
+              >
+                Download CV
+              </a>
             </div>
           </div>
         </div>
@@ -194,25 +227,20 @@ const ContactMe = () => {
 
             {/* ================= FORMSUBMIT SETTINGS ================= */}
 
-            {/* Email subject */}
+            {/* EMAIL SUBJECT */}
             <input
               type="hidden"
               name="_subject"
               value="New Job Opportunity - DJJS Furniture World"
             />
 
-            {/*Don't Disable captcha */}
-            <input
-              type="hidden"
-              name="_captcha"
-              value="New Job Opportunity - DJJS Furniture World"
-            />
+            {/* KEEP CAPTCHA ENABLED */}
+            <input type="hidden" name="_captcha" value="true" />
 
-            {/* Email layout */}
+            {/* EMAIL LAYOUT */}
             <input type="hidden" name="_template" value="table" />
 
             {/* ================= SUBMIT ================= */}
-
             <button type="submit">Send Message&nbsp; →</button>
           </form>
         </div>
