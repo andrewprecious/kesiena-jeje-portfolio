@@ -1,394 +1,1407 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
 * {
-  padding: 0;
-  margin: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .galleryPage {
-  background-color: #f7f3ee;
+  width: 100%;
+  min-height: 100vh;
+  background: #f7f3ee;
   color: #17130f;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
 }
 
-/* ================= HERO ================= */
+.galleryPage button,
+.galleryPage a {
+  font-family: inherit;
+}
 
-.galleryHero {
-  min-height: 55vh;
+.galleryPage button {
+  border: none;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+
   display: flex;
   align-items: center;
-  padding: 80px 8%;
-  background-color: #eee5da;
-  position: relative;
+
+  padding: 140px 7vw 80px;
+
   overflow: hidden;
+  color: #f7f3ee;
 }
 
-.galleryHero::after {
-  content: "";
+.heroBackground {
   position: absolute;
-  width: 450px;
-  height: 450px;
-  border-radius: 50%;
-  background-color: #e2d2c1;
-  right: -130px;
-  top: -170px;
+  inset: 0;
+
+  background: linear-gradient(rgba(20, 16, 12, 0.5), rgba(20, 16, 12, 0.65)),
+    url("/images/living-room.jpeg") center / cover no-repeat;
+
+  transform: scale(1.02);
+
+  z-index: 0;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(17, 13, 10, 0.75),
+    rgba(17, 13, 10, 0.2)
+  );
+
+  z-index: 1;
 }
 
 .heroContent {
-  max-width: 750px;
   position: relative;
+
+  max-width: 950px;
+
   z-index: 2;
 }
 
-.heroLabel,
-.sectionHeading p,
-.galleryHeading p,
-.videoHeading p,
-.moreWork p {
+.eyebrow {
+  margin-bottom: 20px;
+
+  font-size: 10px;
+  font-weight: 500;
+
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+
   color: #6b4933;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 2px;
+}
+
+.light {
+  color: rgba(247, 243, 238, 0.7);
 }
 
 .heroContent h1 {
-  margin-top: 20px;
+  max-width: 1000px;
+
   font-family: "Cinzel Decorative", serif;
-  font-size: 60px;
-  line-height: 1.15;
-  font-weight: 500;
-  color: #17130f;
+  font-size: clamp(50px, 7vw, 105px);
+  line-height: 1.02;
+  font-weight: 400;
+  letter-spacing: -2px;
 }
 
 .heroContent h1 span {
+  color: #c9ad91;
+}
+
+.heroDescription {
+  max-width: 600px;
+
+  margin-top: 30px;
+
+  font-size: 16px;
+  line-height: 1.9;
+
+  color: rgba(247, 243, 238, 0.72);
+}
+
+.heroActions {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+
+  margin-top: 42px;
+}
+
+.btnLight {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  padding: 15px 24px;
+
+  background: #f7f3ee;
+  color: #17130f;
+
+  text-decoration: none;
+
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.btnLight span {
+  font-size: 18px;
+}
+
+.btnLight:hover {
+  background: #c9ad91;
+  color: #17130f;
+  transform: translateY(-3px);
+}
+
+.textLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  color: #f7f3ee;
+
+  text-decoration: none;
+
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+
+  transition: gap 0.3s ease;
+}
+
+.textLink:hover {
+  gap: 18px;
+}
+
+.textLink span {
+  font-size: 18px;
+}
+
+.heroBottom {
+  position: absolute;
+
+  left: 7vw;
+  right: 7vw;
+  bottom: 35px;
+
+  display: flex;
+  justify-content: space-between;
+
+  z-index: 2;
+
+  font-size: 9px;
+  letter-spacing: 2px;
+
+  color: rgba(247, 243, 238, 0.55);
+}
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.introSection {
+  display: grid;
+  grid-template-columns: 0.65fr 1.7fr 0.5fr;
+  gap: 50px;
+
+  padding: 130px 7vw;
+
+  background: #f7f3ee;
+}
+
+.introLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.introLabel p {
+  font-size: 9px;
+  line-height: 1.6;
+  letter-spacing: 2px;
   color: #6b4933;
 }
 
-.heroText {
-  max-width: 600px;
-  margin-top: 25px;
-  color: #17130f;
-  font-size: 15px;
-  line-height: 1.8;
+.smallLine {
+  width: 35px;
+  height: 1px;
+
+  margin-top: 7px;
+
+  background: #6b4933;
 }
 
-/* ================= FEATURED ================= */
+.introContent h2 {
+  font-family: "Cinzel Decorative", serif;
+
+  font-size: clamp(40px, 5vw, 72px);
+  line-height: 1.08;
+
+  font-weight: 400;
+}
+
+.introContent h2 span {
+  color: #6b4933;
+}
+
+.introContent > p {
+  max-width: 650px;
+
+  margin-top: 30px;
+
+  font-size: 15px;
+  line-height: 1.9;
+
+  color: rgba(23, 19, 15, 0.62);
+}
+
+.introNumber {
+  align-self: end;
+  text-align: right;
+}
+
+.introNumber span {
+  display: block;
+
+  font-family: "Cinzel Decorative", serif;
+  font-size: 28px;
+
+  color: #6b4933;
+}
+
+.introNumber p {
+  margin-top: 5px;
+
+  font-size: 9px;
+  line-height: 1.6;
+
+  letter-spacing: 2px;
+
+  color: rgba(23, 19, 15, 0.45);
+}
+
+/* =========================================================
+   SHARED SECTION
+========================================================= */
+
+.featuredSection,
+.gallerySection {
+  padding: 130px 7vw;
+}
 
 .featuredSection {
-  padding: 100px 8%;
-  background-color: #f7f3ee;
+  background: #eee5da;
 }
 
-.sectionHeading {
-  max-width: 650px;
-  margin-bottom: 55px;
+.sectionTop {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 80px;
+
+  margin-bottom: 65px;
 }
 
-.sectionHeading h2,
-.galleryHeading h2,
-.videoHeading h2,
-.moreWork h2 {
-  margin-top: 15px;
+.sectionTop h2 {
   font-family: "Cinzel Decorative", serif;
-  font-size: 42px;
-  line-height: 1.3;
-  font-weight: 500;
-  color: #17130f;
+
+  font-size: clamp(42px, 5vw, 72px);
+  line-height: 1.08;
+
+  font-weight: 400;
 }
+
+.sectionTop h2 span {
+  color: #6b4933;
+}
+
+.sectionDescription {
+  align-self: end;
+
+  max-width: 470px;
+
+  font-size: 14px;
+  line-height: 1.9;
+
+  color: rgba(23, 19, 15, 0.58);
+}
+
+/* =========================================================
+   FEATURED PROJECTS
+========================================================= */
 
 .featuredGrid {
   display: grid;
-  grid-template-columns: 1.3fr 0.7fr;
+  grid-template-columns: 1.4fr 0.8fr;
   gap: 20px;
+
+  min-height: 700px;
 }
 
-.featuredLarge,
-.featuredImage {
-  position: relative;
-  overflow: hidden;
-  background-color: #ddd;
+.featuredMain {
+  min-height: 700px;
 }
 
-.featuredLarge {
-  height: 650px;
-}
-
-.featuredSmall {
+.featuredSide {
   display: grid;
   grid-template-rows: 1fr 1fr;
   gap: 20px;
 }
 
-.featuredImage {
-  min-height: 315px;
-}
+.featuredCard {
+  position: relative;
 
-.featuredLarge img,
-.featuredImage img {
+  display: block;
+
   width: 100%;
   height: 100%;
-  object-fit: cover;
+
+  padding: 0;
+
+  background: #29231d;
+
+  overflow: hidden;
+
+  cursor: pointer;
+}
+
+.featuredCard img {
+  width: 100%;
+  height: 100%;
+
   display: block;
-  transition: transform 0.5s ease;
+
+  object-fit: cover;
+
+  transition: transform 0.7s ease;
 }
 
-.featuredLarge:hover img,
-.featuredImage:hover img {
-  transform: scale(1.04);
+.featuredCard:hover img {
+  transform: scale(1.045);
 }
 
-.imageOverlay {
+.featuredCard::after {
+  content: "";
+
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 50px 30px 25px;
-  background: linear-gradient(transparent, rgba(23, 19, 15, 0.9));
+  inset: 0;
+
+  background: linear-gradient(to top, rgba(10, 8, 6, 0.8), transparent 60%);
+}
+
+.featuredOverlay {
+  position: absolute;
+
+  left: 30px;
+  right: 30px;
+  bottom: 28px;
+
+  z-index: 2;
+
   color: #f7f3ee;
+
+  text-align: left;
 }
 
-.imageOverlay span {
-  color: #c7a98b;
-  font-size: 11px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
+.featuredOverlay span {
+  font-size: 9px;
+  letter-spacing: 2px;
+
+  color: rgba(247, 243, 238, 0.65);
 }
 
-.imageOverlay h3 {
+.featuredOverlay h3 {
+  margin-top: 10px;
+
+  font-family: "Cinzel Decorative", serif;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.featuredOverlay p {
   margin-top: 7px;
-  font-size: 21px;
-  font-weight: 500;
+
+  font-size: 11px;
+
+  color: rgba(247, 243, 238, 0.65);
 }
 
-/* ================= PHOTO GALLERY ================= */
+/* =========================================================
+   GENERAL PHOTO GALLERY
+========================================================= */
 
-.photoGallery {
-  padding: 100px 8%;
-  background-color: #eee5da;
+.gallerySection {
+  background: #f7f3ee;
 }
 
-.galleryHeading {
+.filterBar {
   display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 60px;
-  margin-bottom: 55px;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin-bottom: 50px;
 }
 
-.galleryIntro {
-  max-width: 420px;
-  color: #51483f;
-  font-size: 14px;
-  line-height: 1.8;
+.filterBtn {
+  padding: 12px 18px;
+
+  background: transparent;
+
+  border: 1px solid rgba(23, 19, 15, 0.18) !important;
+
+  color: rgba(23, 19, 15, 0.6);
+
+  cursor: pointer;
+
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.filterBtn:hover,
+.filterActive {
+  background: #17130f;
+
+  border-color: #17130f !important;
+
+  color: #f7f3ee;
 }
 
 .galleryGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 350px;
-  gap: 18px;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 45px 22px;
 }
 
-.galleryItem {
+.galleryCard {
+  min-width: 0;
+}
+
+.imageButton {
   position: relative;
-  overflow: hidden;
-  background-color: #d9cabb;
-}
 
-.galleryItem.tallItem {
-  grid-row: span 2;
-}
-
-.galleryItem img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
   display: block;
+
+  width: 100%;
+
+  padding: 0;
+
+  background: #ded5cc;
+
+  overflow: hidden;
+
+  cursor: pointer;
+}
+
+.imageButton img {
+  display: block;
+
+  width: 100%;
+  height: 350px;
+
+  object-fit: cover;
+
   transition: transform 0.5s ease;
 }
 
-.galleryItem:hover img {
-  transform: scale(1.05);
+.galleryCard.tall .imageButton img {
+  height: 470px;
 }
 
-.galleryItemInfo {
+.imageButton:hover img {
+  transform: scale(1.035);
+}
+
+.imageView {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 45px 22px 20px;
-  background: linear-gradient(transparent, rgba(23, 19, 15, 0.88));
+
+  right: 18px;
+  bottom: 18px;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(23, 19, 15, 0.85);
+
   color: #f7f3ee;
+
+  font-size: 17px;
+
+  opacity: 0;
+
+  transform: translateY(8px);
+
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.galleryItemInfo span {
-  color: #c7a98b;
+.imageButton:hover .imageView {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cardCaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding-top: 17px;
+}
+
+.cardCaption span:first-child {
+  display: block;
+
+  font-size: 8px;
+  letter-spacing: 2px;
+
+  color: #6b4933;
+}
+
+.cardCaption h3 {
+  margin-top: 7px;
+
+  font-family: "Cinzel Decorative", serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.cardNumber {
   font-size: 10px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
+
+  color: rgba(23, 19, 15, 0.4);
 }
 
-.galleryItemInfo h3 {
-  margin-top: 5px;
-  font-size: 16px;
-  font-weight: 500;
-}
+/* =========================================================
+   GARES HOTEL PROJECT
+========================================================= */
 
-/* ================= VIDEO SHOWCASE ================= */
-
-.videoSection {
-  padding: 100px 8%;
-  background-color: #17130f;
-  color: #f7f3ee;
-}
-
-.videoHeading {
-  max-width: 650px;
-  margin-bottom: 55px;
-}
-
-.videoHeading > p:first-child {
-  color: #c7a98b;
-}
-
-.videoHeading h2 {
-  color: #f7f3ee;
-}
-
-.videoHeading > p:last-child {
-  margin-top: 20px;
-  color: #c9c1b9;
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-.videoGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 35px;
-}
-
-.videoCard {
-  background-color: #211b16;
-  border: 1px solid #4a3b2e;
-}
-
-.videoWrapper {
+.hotelSection {
   width: 100%;
-  height: 500px;
-  background-color: #000;
+
+  background: #17130f;
+  color: #f7f3ee;
+
+  overflow: hidden;
 }
 
-.videoWrapper video {
+/* =========================================================
+   HOTEL INTRO
+========================================================= */
+
+.hotelIntro {
+  padding: 140px 7vw 90px;
+
+  border-bottom: 1px solid rgba(247, 243, 238, 0.16);
+}
+
+.hotelIntroLabel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 80px;
+
+  font-size: 11px;
+  letter-spacing: 2px;
+
+  color: rgba(247, 243, 238, 0.55);
+}
+
+.hotelIntroContent {
+  max-width: 1050px;
+}
+
+.hotelIntroContent .eyebrow {
+  color: rgba(247, 243, 238, 0.55);
+}
+
+.hotelIntroContent h2 {
+  margin: 18px 0 35px;
+
+  font-family: "Cinzel Decorative", serif;
+
+  font-size: clamp(42px, 6vw, 92px);
+  line-height: 1.05;
+
+  font-weight: 400;
+}
+
+.hotelIntroContent h2 span {
+  color: #c9ad91;
+}
+
+.hotelIntroContent > p:last-child {
+  max-width: 680px;
+
+  font-size: 17px;
+  line-height: 1.9;
+
+  color: rgba(247, 243, 238, 0.68);
+}
+
+/* =========================================================
+   HOTEL STATS
+========================================================= */
+
+.hotelStats {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  border-bottom: 1px solid rgba(247, 243, 238, 0.16);
+}
+
+.hotelStats > div {
+  min-height: 150px;
+
+  padding: 35px;
+
+  border-right: 1px solid rgba(247, 243, 238, 0.16);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hotelStats > div:last-child {
+  border-right: none;
+}
+
+.hotelStats strong {
+  font-family: "Cinzel Decorative", serif;
+
+  font-size: 23px;
+  font-weight: 400;
+
+  color: #c9ad91;
+}
+
+.hotelStats span {
+  font-size: 10px;
+  letter-spacing: 2px;
+
+  color: rgba(247, 243, 238, 0.5);
+}
+
+/* =========================================================
+   HOTEL SECTION HEADINGS
+========================================================= */
+
+.hotelWorkSection,
+.beforeAfterSection,
+.hotelSpacesSection,
+.hotelFinishedSection {
+  padding: 120px 7vw;
+}
+
+.hotelSectionHeading {
+  display: grid;
+
+  grid-template-columns: 1.2fr 0.8fr;
+
+  gap: 80px;
+
+  margin-bottom: 65px;
+}
+
+.hotelEyebrow {
+  margin-bottom: 18px;
+
+  font-size: 10px;
+  letter-spacing: 2.5px;
+
+  color: #c9ad91;
+}
+
+.hotelSectionHeading h3 {
+  margin: 0;
+
+  font-family: "Cinzel Decorative", serif;
+
+  font-size: clamp(36px, 5vw, 68px);
+  line-height: 1.1;
+
+  font-weight: 400;
+}
+
+.hotelSectionHeading h3 span {
+  color: #c9ad91;
+}
+
+.hotelSectionHeading > p {
+  align-self: end;
+
+  max-width: 480px;
+
+  font-size: 15px;
+  line-height: 1.9;
+
+  color: rgba(247, 243, 238, 0.58);
+}
+
+/* =========================================================
+   HOTEL WORK VIDEOS
+========================================================= */
+
+.hotelVideoGrid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 55px 28px;
+}
+
+.hotelVideoCard {
+  min-width: 0;
+}
+
+.hotelVideoWrapper {
+  position: relative;
+
+  width: 100%;
+  height: 390px;
+
+  background: #0e0c0a;
+
+  overflow: hidden;
+}
+
+.hotelVideoWrapper video {
+  display: block;
+
   width: 100%;
   height: 100%;
-  display: block;
+
   object-fit: contain;
+
+  background: #0e0c0a;
 }
 
-.videoInfo {
-  padding: 25px;
-}
+.videoNumber {
+  position: absolute;
 
-.videoInfo span {
-  color: #c7a98b;
-  font-size: 12px;
-}
+  top: 18px;
+  left: 18px;
 
-.videoInfo h3 {
-  margin-top: 10px;
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(23, 19, 15, 0.85);
+
+  font-size: 11px;
+  letter-spacing: 1px;
+
   color: #f7f3ee;
-  font-size: 21px;
-  font-weight: 500;
 }
 
-.videoInfo p {
-  margin-top: 8px;
-  color: #c9c1b9;
+.hotelVideoInfo {
+  padding-top: 22px;
+}
+
+.hotelVideoInfo > span {
+  font-size: 9px;
+  letter-spacing: 2px;
+
+  color: #c9ad91;
+}
+
+.hotelVideoInfo h4 {
+  margin: 10px 0;
+
+  font-family: "Cinzel Decorative", serif;
+
+  font-size: 23px;
+  font-weight: 400;
+}
+
+.hotelVideoInfo p {
+  max-width: 580px;
+
   font-size: 13px;
-  line-height: 1.7;
+  line-height: 1.8;
+
+  color: rgba(247, 243, 238, 0.52);
 }
 
-/* ================= MORE WORK ================= */
+/* =========================================================
+   BEFORE & AFTER
+========================================================= */
 
-.moreWork {
-  padding: 100px 8%;
+.beforeAfterSection {
+  background: #eee5da;
+  color: #17130f;
+}
+
+.beforeAfterSection .hotelSectionHeading > p {
+  color: rgba(23, 19, 15, 0.58);
+}
+
+.beforeAfterSection .hotelSectionHeading h3 {
+  color: #17130f;
+}
+
+.beforeAfterSection .hotelEyebrow {
+  color: #6b4933;
+}
+
+.beforeAfterGrid {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  gap: 100px;
-  background-color: #f7f3ee;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 60px 30px;
 }
 
-.moreWork h2 {
-  font-size: 38px;
+.beforeAfterCard {
+  min-width: 0;
 }
 
-.moreWorkText {
-  max-width: 600px;
-  align-self: center;
-  color: #51483f !important;
-  font-size: 15px !important;
-  line-height: 1.9;
-  letter-spacing: 0 !important;
+.beforeAfterImages {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 3px;
+
+  background: #17130f;
 }
 
-/* ================= CTA ================= */
+.beforeAfterImages button {
+  position: relative;
 
-.galleryCTA {
-  padding: 100px 20px;
-  text-align: center;
-  background-color: #6b4933;
+  padding: 0;
+
+  background: #d8cec3;
+
+  cursor: pointer;
+
+  overflow: hidden;
+}
+
+.beforeAfterImages img {
+  display: block;
+
+  width: 100%;
+  height: 330px;
+
+  object-fit: contain;
+
+  background: #d8cec3;
+
+  transition: transform 0.5s ease;
+}
+
+.beforeAfterImages button:hover img {
+  transform: scale(1.04);
+}
+
+.beforeAfterImages button span {
+  position: absolute;
+
+  left: 15px;
+  bottom: 15px;
+
+  padding: 7px 11px;
+
+  background: rgba(23, 19, 15, 0.88);
+
   color: #f7f3ee;
-}
 
-.galleryCTA > p:first-child {
-  font-size: 12px;
+  font-size: 9px;
   letter-spacing: 2px;
 }
 
-.galleryCTA h2 {
-  margin: 20px 0 30px;
+.beforeAfterInfo {
+  padding-top: 20px;
+}
+
+.beforeAfterInfo h4 {
+  margin-bottom: 8px;
+
   font-family: "Cinzel Decorative", serif;
-  font-size: 45px;
-  line-height: 1.3;
-  font-weight: 500;
+
+  font-size: 22px;
+  font-weight: 400;
 }
 
-.galleryCTA button {
-  padding: 14px 28px;
-  border: none;
-  background-color: #f7f3ee;
-  color: #6b4933;
-  font-size: 14px;
+.beforeAfterInfo p {
+  max-width: 550px;
+
+  font-size: 13px;
+  line-height: 1.8;
+
+  color: rgba(23, 19, 15, 0.6);
+}
+
+/* =========================================================
+   FINISHED HOTEL SPACES
+========================================================= */
+
+.hotelSpacesSection {
+  border-top: 1px solid rgba(247, 243, 238, 0.1);
+}
+
+.hotelSpacesGrid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 55px 30px;
+}
+
+.hotelSpaceCard button {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+
+  padding: 0;
+
+  background: #0e0c0a;
+
   cursor: pointer;
-  transition: 0.3s ease;
+
+  overflow: hidden;
 }
 
-.galleryCTA button:hover {
-  background-color: #17130f;
+.hotelSpaceCard img {
+  display: block;
+
+  width: 100%;
+  height: 470px;
+
+  object-fit: cover;
+
+  transition: transform 0.6s ease;
+}
+
+.hotelSpaceCard button:hover img {
+  transform: scale(1.035);
+}
+
+.spaceNumber {
+  position: absolute;
+
+  top: 20px;
+  left: 20px;
+
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(23, 19, 15, 0.85);
+
+  font-size: 10px;
+
   color: #f7f3ee;
 }
 
-/* ================= FOOTER ================= */
+.hotelSpaceCard > div {
+  padding-top: 20px;
+}
+
+.hotelSpaceCard > div > span {
+  font-size: 9px;
+  letter-spacing: 2px;
+
+  color: #c9ad91;
+}
+
+.hotelSpaceCard h4 {
+  margin: 9px 0;
+
+  font-family: "Cinzel Decorative", serif;
+
+  font-size: 23px;
+  font-weight: 400;
+}
+
+.hotelSpaceCard p {
+  max-width: 550px;
+
+  font-size: 13px;
+  line-height: 1.8;
+
+  color: rgba(247, 243, 238, 0.52);
+}
+
+/* =========================================================
+   FINISHED HOTEL VIDEOS
+========================================================= */
+
+.hotelFinishedSection {
+  background: #0e0c0a;
+}
+
+.finishedVideoGrid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 25px;
+}
+
+.finishedVideoCard {
+  min-width: 0;
+}
+
+.finishedVideoWrapper {
+  width: 100%;
+  height: 330px;
+
+  background: #17130f;
+
+  overflow: hidden;
+}
+
+.finishedVideoWrapper video {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  background: #17130f;
+}
+
+.finishedVideoCard > div:last-child {
+  padding-top: 20px;
+}
+
+.finishedVideoCard > div:last-child > span {
+  font-size: 9px;
+  letter-spacing: 2px;
+
+  color: #c9ad91;
+}
+
+.finishedVideoCard h4 {
+  margin: 10px 0;
+
+  font-family: "Cinzel Decorative", serif;
+
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.finishedVideoCard p {
+  font-size: 12px;
+  line-height: 1.8;
+
+  color: rgba(247, 243, 238, 0.5);
+}
+
+/* =========================================================
+   HOTEL CLOSING
+========================================================= */
+
+.hotelClosing {
+  padding: 150px 7vw;
+
+  text-align: center;
+
+  background: #c9ad91;
+
+  color: #17130f;
+}
+
+.hotelClosing .hotelEyebrow {
+  color: #17130f;
+}
+
+.hotelClosing h3 {
+  max-width: 900px;
+
+  margin: 20px auto 25px;
+
+  font-family: "Cinzel Decorative", serif;
+
+  font-size: clamp(42px, 6vw, 85px);
+  line-height: 1.05;
+
+  font-weight: 400;
+}
+
+.hotelClosing h3 span {
+  color: #f7f3ee;
+}
+
+.hotelClosing > p:last-child {
+  max-width: 600px;
+
+  margin: auto;
+
+  font-size: 15px;
+  line-height: 1.9;
+
+  color: rgba(23, 19, 15, 0.65);
+}
+
+/* =========================================================
+   GENERAL STATEMENT
+========================================================= */
+
+.statementSection {
+  display: grid;
+
+  grid-template-columns: 0.5fr 1.4fr 0.8fr;
+
+  gap: 50px;
+
+  padding: 130px 7vw;
+
+  background: #f7f3ee;
+}
+
+.statementNumber {
+  font-size: 10px;
+  letter-spacing: 2px;
+
+  color: rgba(23, 19, 15, 0.45);
+}
+
+.statementHeading h2 {
+  font-family: "Cinzel Decorative", serif;
+
+  font-size: clamp(40px, 5vw, 70px);
+  line-height: 1.08;
+
+  font-weight: 400;
+}
+
+.statementHeading h2 span {
+  color: #6b4933;
+}
+
+.statementDescription {
+  align-self: end;
+
+  font-size: 14px;
+  line-height: 1.9;
+
+  color: rgba(23, 19, 15, 0.58);
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contactSection {
+  padding: 140px 7vw;
+
+  text-align: center;
+
+  background: #17130f;
+
+  color: #f7f3ee;
+}
+
+.contactSection h2 {
+  margin-bottom: 25px;
+
+  font-family: "Cinzel Decorative", serif;
+
+  font-size: clamp(45px, 6vw, 90px);
+  line-height: 1.05;
+
+  font-weight: 400;
+}
+
+.contactSection h2 span {
+  color: #c9ad91;
+}
+
+.contactSection > p:not(.eyebrow) {
+  max-width: 550px;
+
+  margin: 0 auto 35px;
+
+  font-size: 14px;
+  line-height: 1.8;
+
+  color: rgba(247, 243, 238, 0.58);
+}
+
+/* =========================================================
+   LIGHTBOX
+========================================================= */
+
+.lightbox {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 50px;
+
+  background: rgba(10, 8, 6, 0.95);
+}
+
+.lightboxContent {
+  max-width: 90vw;
+  max-height: 88vh;
+
+  text-align: center;
+}
+
+.lightboxContent img {
+  display: block;
+
+  max-width: 90vw;
+  max-height: 80vh;
+
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+}
+
+.lightboxContent p {
+  margin-top: 15px;
+
+  font-size: 12px;
+  letter-spacing: 1px;
+
+  color: #f7f3ee;
+}
+
+.lightboxClose,
+.lightboxPrev,
+.lightboxNext {
+  position: absolute;
+
+  z-index: 3;
+
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(247, 243, 238, 0.1);
+
+  color: #f7f3ee;
+
+  cursor: pointer;
+
+  font-size: 25px;
+
+  transition: background 0.3s ease;
+}
+
+.lightboxClose:hover,
+.lightboxPrev:hover,
+.lightboxNext:hover {
+  background: rgba(247, 243, 238, 0.2);
+}
+
+.lightboxClose {
+  top: 25px;
+  right: 25px;
+}
+
+.lightboxPrev {
+  left: 25px;
+  top: 50%;
+
+  transform: translateY(-50%);
+}
+
+.lightboxNext {
+  right: 25px;
+  top: 50%;
+
+  transform: translateY(-50%);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 .footer {
-  padding: 50px 8%;
-  background-color: #17130f;
+  padding: 55px 7vw 30px;
+
+  background: #0e0c0a;
+
   color: #f7f3ee;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 30px;
+}
+
+.footerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  padding-bottom: 50px;
+
+  border-bottom: 1px solid rgba(247, 243, 238, 0.12);
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+
+  text-decoration: none;
+
+  color: #f7f3ee;
+}
+
+.brandName {
+  font-family: "Cinzel Decorative", serif;
+
+  font-size: 32px;
+}
+
+.brandSubtitle {
+  margin-top: 3px;
+
+  font-size: 9px;
+  letter-spacing: 3px;
+
+  color: #c9ad91;
+}
+
+.footerTop > p {
+  font-size: 11px;
+
+  color: rgba(247, 243, 238, 0.5);
+}
+
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+
+  padding-top: 25px;
 }
 
-.footer h3 {
-  font-size: 16px;
-  letter-spacing: 1px;
-}
+.footerBottom > p {
+  font-size: 10px;
 
-.footer p {
-  margin-top: 7px;
-  color: #bdb4ac;
-  font-size: 12px;
+  color: rgba(247, 243, 238, 0.4);
 }
 
 .footerLinks {
@@ -397,131 +1410,438 @@
 }
 
 .footerLinks a {
-  color: #d8d0c8;
+  color: rgba(247, 243, 238, 0.6);
+
   text-decoration: none;
-  font-size: 12px;
+
+  font-size: 10px;
+  letter-spacing: 1px;
+
+  transition: color 0.3s ease;
 }
 
 .footerLinks a:hover {
-  color: #c7a98b;
+  color: #c9ad91;
 }
 
-.copyright {
-  grid-column: 1 / -1;
-  padding-top: 20px;
-  border-top: 1px solid #3b3129;
-}
+/* =========================================================
+   RESPONSIVE — 1100px
+========================================================= */
 
-/* ================= TABLET ================= */
+@media (max-width: 1100px) {
+  .introSection {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
 
-@media (max-width: 900px) {
-  .heroContent h1 {
-    font-size: 48px;
+  .introNumber {
+    text-align: left;
   }
 
   .featuredGrid {
-    grid-template-columns: 1fr;
+    min-height: 600px;
   }
 
-  .featuredLarge {
-    height: 550px;
+  .featuredMain {
+    min-height: 600px;
   }
 
   .galleryGrid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .videoGrid {
+  .statementSection {
     grid-template-columns: 1fr;
   }
 
-  .videoWrapper {
-    height: 500px;
-  }
-
-  .galleryHeading {
-    align-items: start;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .moreWork {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .statementNumber {
+    margin-bottom: -20px;
   }
 }
 
-/* ================= MOBILE ================= */
+/* =========================================================
+   RESPONSIVE — 900px
+========================================================= */
 
-@media (max-width: 600px) {
-  .galleryHero {
-    min-height: 60vh;
-    padding: 60px 25px;
+@media (max-width: 900px) {
+  .hero {
+    padding: 120px 5vw 70px;
   }
 
-  .heroContent h1 {
-    font-size: 36px;
+  .heroBottom {
+    left: 5vw;
+    right: 5vw;
   }
 
-  .heroText {
-    font-size: 13px;
-  }
-
-  .featuredSection,
-  .photoGallery,
-  .videoSection,
-  .moreWork {
-    padding: 70px 25px;
-  }
-
-  .sectionHeading h2,
-  .galleryHeading h2,
-  .videoHeading h2,
-  .moreWork h2 {
-    font-size: 30px;
-  }
-
-  .featuredLarge {
-    height: 400px;
-  }
-
-  .featuredSmall {
-    grid-template-rows: 250px 250px;
-  }
-
-  .galleryGrid {
-    grid-template-columns: 1fr;
-    grid-auto-rows: 350px;
-  }
-
-  .galleryItem.tallItem {
-    grid-row: span 1;
-  }
-
-  .videoGrid {
+  .sectionTop {
     grid-template-columns: 1fr;
     gap: 25px;
   }
 
-  .videoWrapper {
-    height: 350px;
+  .featuredGrid {
+    grid-template-columns: 1fr;
+
+    min-height: auto;
   }
 
-  .galleryCTA {
-    padding: 80px 25px;
+  .featuredMain {
+    min-height: 550px;
   }
 
-  .galleryCTA h2 {
-    font-size: 32px;
+  .featuredSide {
+    min-height: 550px;
+  }
+
+  .hotelIntro {
+    padding: 100px 5vw 70px;
+  }
+
+  .hotelIntroLabel {
+    margin-bottom: 55px;
+  }
+
+  .hotelStats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hotelStats > div:nth-child(2) {
+    border-right: none;
+  }
+
+  .hotelStats > div:nth-child(-n + 2) {
+    border-bottom: 1px solid rgba(247, 243, 238, 0.16);
+  }
+
+  .hotelWorkSection,
+  .beforeAfterSection,
+  .hotelSpacesSection,
+  .hotelFinishedSection {
+    padding: 90px 5vw;
+  }
+
+  .hotelSectionHeading {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .hotelVideoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .beforeAfterGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .hotelSpacesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .finishedVideoGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hotelClosing {
+    padding: 110px 5vw;
+  }
+
+  .statementSection {
+    padding: 100px 5vw;
+  }
+
+  .contactSection {
+    padding: 110px 5vw;
   }
 
   .footer {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — 600px
+========================================================= */
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: 90vh;
+
+    padding: 110px 6vw 80px;
+  }
+
+  .heroContent h1 {
+    font-size: clamp(40px, 11vw, 60px);
+
+    letter-spacing: -1px;
+  }
+
+  .heroDescription {
+    font-size: 14px;
+  }
+
+  .heroActions {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 20px;
+  }
+
+  .heroBottom {
+    bottom: 25px;
+
+    font-size: 7px;
+    letter-spacing: 1.5px;
+  }
+
+  .heroBottom span:last-child {
+    display: none;
+  }
+
+  .introSection {
+    padding: 85px 6vw;
+  }
+
+  .featuredSection,
+  .gallerySection {
+    padding: 85px 6vw;
+  }
+
+  .featuredMain {
+    min-height: 420px;
+  }
+
+  .featuredSide {
+    min-height: 500px;
+  }
+
+  .galleryGrid {
     grid-template-columns: 1fr;
-    padding: 40px 25px;
+  }
+
+  .galleryCard.tall .imageButton img,
+  .imageButton img {
+    height: 370px;
+  }
+
+  .filterBar {
+    gap: 7px;
+  }
+
+  .filterBtn {
+    padding: 10px 13px;
+
+    font-size: 8px;
+  }
+
+  .hotelIntro {
+    padding: 80px 6vw 60px;
+  }
+
+  .hotelIntroLabel {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 12px;
+
+    margin-bottom: 45px;
+  }
+
+  .hotelIntroContent h2 {
+    font-size: clamp(38px, 10vw, 58px);
+  }
+
+  .hotelIntroContent > p:last-child {
+    font-size: 14px;
+  }
+
+  .hotelStats {
+    grid-template-columns: 1fr;
+  }
+
+  .hotelStats > div,
+  .hotelStats > div:nth-child(2) {
+    border-right: none;
+
+    border-bottom: 1px solid rgba(247, 243, 238, 0.16);
+  }
+
+  .hotelStats > div:last-child {
+    border-bottom: none;
+  }
+
+  .hotelWorkSection,
+  .beforeAfterSection,
+  .hotelSpacesSection,
+  .hotelFinishedSection {
+    padding: 75px 6vw;
+  }
+
+  .hotelSectionHeading h3 {
+    font-size: clamp(35px, 10vw, 52px);
+  }
+
+  .hotelVideoWrapper {
+    height: 300px;
+  }
+
+  .beforeAfterImages img {
+    height: 240px;
+  }
+
+  .hotelSpaceCard img {
+    height: 330px;
+  }
+
+  .finishedVideoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .finishedVideoWrapper {
+    height: 300px;
+  }
+
+  .hotelClosing {
+    padding: 90px 6vw;
+  }
+
+  .hotelClosing h3 {
+    font-size: clamp(38px, 10vw, 58px);
+  }
+
+  .statementSection {
+    padding: 85px 6vw;
+  }
+
+  .statementHeading h2 {
+    font-size: clamp(38px, 10vw, 58px);
+  }
+
+  .contactSection {
+    padding: 90px 6vw;
+  }
+
+  .contactSection h2 {
+    font-size: clamp(40px, 10vw, 58px);
+  }
+
+  .footer {
+    padding: 45px 6vw 25px;
+  }
+
+  .footerTop {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 25px;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 25px;
   }
 
   .footerLinks {
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 15px 22px;
+  }
+
+  .lightbox {
+    padding: 25px;
+  }
+
+  .lightboxContent img {
+    max-width: 85vw;
+    max-height: 75vh;
+  }
+
+  .lightboxPrev,
+  .lightboxNext {
+    width: 42px;
+    height: 42px;
+
+    font-size: 18px;
+  }
+
+  .lightboxPrev {
+    left: 10px;
+  }
+
+  .lightboxNext {
+    right: 10px;
+  }
+
+  .lightboxClose {
+    top: 15px;
+    right: 15px;
+
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — 430px
+========================================================= */
+
+@media (max-width: 430px) {
+  .hero {
+    min-height: 85vh;
+  }
+
+  .heroContent h1 {
+    font-size: 39px;
+  }
+
+  .featuredMain {
+    min-height: 350px;
+  }
+
+  .featuredSide {
+    min-height: 420px;
+  }
+
+  .featuredOverlay {
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .featuredOverlay h3 {
+    font-size: 19px;
+  }
+
+  .galleryCard.tall .imageButton img,
+  .imageButton img {
+    height: 300px;
+  }
+
+  .hotelVideoWrapper {
+    height: 250px;
+  }
+
+  .beforeAfterImages {
+    grid-template-columns: 1fr;
+  }
+
+  .beforeAfterImages img {
+    height: 260px;
+  }
+
+  .hotelSpaceCard img {
+    height: 280px;
+  }
+
+  .finishedVideoWrapper {
+    height: 260px;
+  }
+
+  .hotelStats strong {
+    font-size: 19px;
+  }
+
+  .footerLinks {
+    gap: 12px 18px;
   }
 }

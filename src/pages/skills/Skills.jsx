@@ -1,7 +1,44 @@
+import React from "react";
+import { Link } from "react-router-dom";
 import skillsStyles from "./skills.module.css";
 import Navbar from "../../component/navbar/Navbar";
 
 const Skills = () => {
+  const practiceVideos = [
+    {
+      src: "/media/skill-vid6.mp4",
+      number: "01",
+      category: "INTERIOR DOORS",
+      title: "Working on Wooden Door",
+      description:
+        "A look at practical work involving wooden door, from fitting components to ensuring a neat finished result.",
+    },
+    {
+      src: "/media/skill-vid8.mp4",
+      number: "02",
+      category: "INTERIOR DOORS",
+      title: "Working on Wooden an Interior Door",
+      description:
+        "Practical work involving wooden interior doors, with attention to fitting, alignment and a clean finished look.",
+    },
+    {
+      src: "/media/bed-frame.mp4",
+      number: "03",
+      category: "BEDROOM",
+      title: "Working on Bed Frame",
+      description:
+        "Practical furniture work involving bed frame and related components, with attention to the final details.",
+    },
+    {
+      src: "/media/skill-vid9.mp4",
+      number: "04",
+      category: "KITCHEN FURNITURE",
+      title: "Working on Kitchen Cabinets",
+      description:
+        "A look at kitchen cabinet work, including fitting components and achieving a properly aligned finish.",
+    },
+  ];
+
   return (
     <div className={skillsStyles.skillsPage}>
       <Navbar />
@@ -19,7 +56,8 @@ const Skills = () => {
 
           <p className={skillsStyles.heroText}>
             A combination of hands-on experience, technical ability and
-            attention to detail developed through practical furniture work.
+            attention to detail developed through practical furniture work,
+            upholstery, sewing and installation.
           </p>
         </div>
       </section>
@@ -93,100 +131,141 @@ const Skills = () => {
         </div>
       </section>
 
+      {/* ================= UPHOLSTERY SPECIALIZATION ================= */}
+      <section className={skillsStyles.upholsterySection}>
+        <div className={skillsStyles.upholsteryIntro}>
+          <p className={skillsStyles.upholsteryLabel}>
+            UPHOLSTERY SPECIALIZATION
+          </p>
+
+          <h2>
+            Crafting comfort.
+            <br />
+            <span>Restoring furniture.</span>
+          </h2>
+
+          <p>
+            Upholstery is an important part of my furniture work. From sewing
+            upholstery fabrics to preparing and covering furniture, I pay
+            attention to the details that contribute to a neat and comfortable
+            finish.
+          </p>
+        </div>
+
+        <div className={skillsStyles.upholsteryGrid}>
+          <div className={skillsStyles.upholsteryImage}>
+            <img
+              src="/images/sewing-machine.jpeg"
+              alt="Industrial sewing machine used for upholstery work"
+              loading="lazy"
+            />
+
+            <div className={skillsStyles.upholsteryImageCaption}>
+              <span>01</span>
+              <h3>Industrial Sewing Equipment</h3>
+              <p>Equipment used for upholstery stitching and fabric work.</p>
+            </div>
+          </div>
+
+          <div className={skillsStyles.upholsteryImage}>
+            <img
+              src="/images/dad-pic.jpeg"
+              alt="Furniture upholsterer sewing upholstery fabric"
+              loading="lazy"
+            />
+
+            <div className={skillsStyles.upholsteryImageCaption}>
+              <span>02</span>
+              <h3>Upholstery Sewing</h3>
+              <p>Working carefully with fabrics, seams and stitching.</p>
+            </div>
+          </div>
+
+          <div className={skillsStyles.upholsteryImage}>
+            <img
+              src="/images/half-made.jpeg"
+              alt="Upholstery work in progress"
+              loading="lazy"
+            />
+
+            <div className={skillsStyles.upholsteryImageCaption}>
+              <span>03</span>
+              <h3>Furniture Upholstery</h3>
+              <p>Preparing and fitting materials for upholstered furniture.</p>
+            </div>
+          </div>
+        </div>
+
+        <div className={skillsStyles.upholsteryServices}>
+          <div>
+            <span>01</span>
+            <h3>Upholstery Sewing</h3>
+            <p>
+              Sewing upholstery fabrics and preparing materials for furniture
+              covering.
+            </p>
+          </div>
+
+          <div>
+            <span>02</span>
+            <h3>Fabric Preparation</h3>
+            <p>
+              Measuring, cutting and preparing materials to suit the furniture
+              being worked on.
+            </p>
+          </div>
+
+          <div>
+            <span>03</span>
+            <h3>Furniture Finishing</h3>
+            <p>
+              Paying attention to the final appearance, alignment and detailing
+              of upholstered furniture.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ================= SKILLS IN PRACTICE ================= */}
       <section className={skillsStyles.skillsPractice}>
         <div className={skillsStyles.practiceHeading}>
-          <p>SKILLS IN PRACTICE</p>
+          <p>WORK IN ACTION</p>
 
           <h2>
-            See the work
+            Different projects.
             <br />
-            in action.
+            <span>Practical craftsmanship.</span>
           </h2>
 
           <p className={skillsStyles.practiceIntro}>
-            Real examples of furniture work completed through practical hands-on
-            experience.
+            Explore my practical furniture work across different projects,
+            including bedroom furniture, living room pieces, dining furniture
+            and kitchen installations. Each project reflects the care and
+            attention involved in furniture making, assembly and finishing.
           </p>
         </div>
 
         <div className={skillsStyles.videoGrid}>
-          {/* VIDEO 1 */}
-          <div className={skillsStyles.videoCard}>
-            <div className={skillsStyles.videoWrapper}>
-              <video controls preload="metadata">
-                <source src="/media/skill-vid2.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
+          {practiceVideos.map((video) => (
+            <div className={skillsStyles.videoCard} key={video.number}>
+              <div className={skillsStyles.videoWrapper}>
+                <video controls muted preload="metadata" playsInline>
+                  <source src={video.src} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
 
-            <div className={skillsStyles.videoInfo}>
-              <span>01</span>
-              <h3> Completed Bedroom Furniture</h3>
-              <p>
-                A look at completed bedroom furniture, highlighting the finished
-                appearance, fitting and overall workmanship.
-              </p>
-            </div>
-          </div>
+              <div className={skillsStyles.videoInfo}>
+                <span>
+                  {video.number} — {video.category}
+                </span>
 
-          {/* VIDEO 2 */}
-          <div className={skillsStyles.videoCard}>
-            <div className={skillsStyles.videoWrapper}>
-              <video controls preload="metadata">
-                <source src="/media/skill-vid3.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
+                <h3>{video.title}</h3>
 
-            <div className={skillsStyles.videoInfo}>
-              <span>02</span>
-              <h3>Assembling a TV Console & Sofas</h3>
-              <p>
-                Putting together TV consoles and sofas, carefully fitting the
-                individual components to create sturdy, properly finished
-                furniture.
-              </p>
+                <p>{video.description}</p>
+              </div>
             </div>
-          </div>
-
-          {/* VIDEO 3 */}
-          <div className={skillsStyles.videoCard}>
-            <div className={skillsStyles.videoWrapper}>
-              <video controls preload="metadata">
-                <source src="/media/skill-vid4.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-
-            <div className={skillsStyles.videoInfo}>
-              <span>03</span>
-              <h3>Finished Dining Table</h3>
-              <p>
-                A completed dining table showcasing the finished design,
-                structure and attention to detail.
-              </p>
-            </div>
-          </div>
-
-          {/* VIDEO 4 */}
-          <div className={skillsStyles.videoCard}>
-            <div className={skillsStyles.videoWrapper}>
-              <video controls preload="metadata">
-                <source src="/media/skill-vid5.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-
-            <div className={skillsStyles.videoInfo}>
-              <span>04</span>
-              <h3>Finished Kitchen Cabinets</h3>
-              <p>
-                A completed kitchen cabinet setup, showcasing the finished look
-                and details.
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
@@ -221,8 +300,8 @@ const Skills = () => {
             <div>
               <h3>Tool Handling</h3>
               <p>
-                Confident use of appropriate hand tools and equipment for
-                furniture construction, assembly and installation.
+                Using appropriate hand tools, equipment and sewing machinery for
+                furniture construction, upholstery and installation.
               </p>
             </div>
           </div>
@@ -231,10 +310,10 @@ const Skills = () => {
             <span>03</span>
 
             <div>
-              <h3>Problem Solving</h3>
+              <h3>Fabric Handling & Sewing</h3>
               <p>
-                Identifying fitting and alignment problems and finding practical
-                solutions.
+                Working with upholstery materials and paying attention to
+                stitching, seams and fabric preparation.
               </p>
             </div>
           </div>
@@ -243,10 +322,22 @@ const Skills = () => {
             <span>04</span>
 
             <div>
+              <h3>Problem Solving</h3>
+              <p>
+                Identifying fitting, alignment and material-related problems and
+                finding practical solutions.
+              </p>
+            </div>
+          </div>
+
+          <div className={skillsStyles.technicalItem}>
+            <span>05</span>
+
+            <div>
               <h3>Attention to Detail</h3>
               <p>
-                Checking fittings, alignment and finishing details to achieve a
-                clean final result.
+                Checking fittings, stitching, alignment and finishing details to
+                achieve a clean final result.
               </p>
             </div>
           </div>
@@ -276,13 +367,17 @@ const Skills = () => {
           <div>
             <h3>Attention to Detail</h3>
             <p>
-              Taking care with measurements, fittings, alignment and finishing.
+              Taking care with measurements, fittings, stitching, alignment and
+              finishing.
             </p>
           </div>
 
           <div>
             <h3>Problem Solving</h3>
-            <p>Finding practical solutions when unexpected issues arise.</p>
+            <p>
+              Finding practical solutions when unexpected issues arise during
+              furniture and upholstery work.
+            </p>
           </div>
 
           <div>
@@ -297,7 +392,7 @@ const Skills = () => {
 
       {/* ================= CTA ================= */}
       <section className={skillsStyles.skillsCTA}>
-        <p>LOOKING FOR A SKILLED FURNITURE PROFESSIONAL?</p>
+        <p>LOOKING FOR A FURNITURE PROFESSIONAL?</p>
 
         <h2>
           Let's talk about
@@ -305,23 +400,25 @@ const Skills = () => {
           your next project.
         </h2>
 
-        <button>Contact Me&nbsp; →</button>
+        <Link to="/contact-me" className={skillsStyles.ctaButton}>
+          Contact Me&nbsp; →
+        </Link>
       </section>
 
       {/* ================= FOOTER ================= */}
       <footer className={skillsStyles.footer}>
         <div>
           <h3>DJJS FURNITURE WORLD</h3>
-          <p>Furniture Installation & Assembly</p>
+          <p>Furniture Installation, Assembly & Upholstery</p>
         </div>
 
         <div className={skillsStyles.footerLinks}>
-          <a href="/">Home</a>
-          <a href="/about-me">About Me</a>
-          <a href="/experience">Experience</a>
-          <a href="/contact-me">Gallery</a>
-          <a href="/skills">Skills</a>
-          <a href="/contact-me">Contact Me</a>
+          <Link to="/">Home</Link>
+          <Link to="/about-me">About Me</Link>
+          <Link to="/experience">Experience</Link>
+          <Link to="/gallery">Gallery</Link>
+          <Link to="/skills">Skills</Link>
+          <Link to="/contact-me">Contact Me</Link>
         </div>
 
         <p className={skillsStyles.copyright}>

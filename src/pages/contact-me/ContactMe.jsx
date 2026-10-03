@@ -113,7 +113,7 @@ const ContactMe = () => {
             <div className={contactStyles.cvButtons}>
               {/* VIEW CV */}
               <a
-                href="/Kesiena-Jeje-CV.pdf"
+                href="/Kesiena-Jeje_cv.pdf"
                 target="_blank"
                 rel="noreferrer"
                 className={contactStyles.viewCv}
