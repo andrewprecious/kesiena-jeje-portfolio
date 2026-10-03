@@ -312,6 +312,12 @@ const Gallery = () => {
       description:
         "Completed living room furniture, showing the finished TV console and seating.",
     },
+    {
+      src: "/media/dad_own.mp4",
+      title: "Finished Office Furniture",
+      description:
+        "A look at completed office furniture, showcasing clean design, practical functionality and attention to detail.",
+    },
   ];
 
   /* =========================================================
