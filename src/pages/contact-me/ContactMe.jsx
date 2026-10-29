@@ -53,7 +53,7 @@ const ContactMe = () => {
               <div>
                 <h3>Phone</h3>
 
-                <a href="tel:+2348114015805">+234 811 401 5805</a>
+                <a href="tel:+44 7364 286871">+44 7364 286871</a>
               </div>
             </div>
 
@@ -65,7 +65,7 @@ const ContactMe = () => {
                 <h3>WhatsApp</h3>
 
                 <a
-                  href="https://wa.me/2348104124252"
+                  href="https://wa.me/+447364286871"
                   target="_blank"
                   rel="noreferrer"
                 >
