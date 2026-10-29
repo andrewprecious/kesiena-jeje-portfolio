@@ -271,7 +271,8 @@
   line-height: 1.7;
 }
 
-.aboutCTA button {
+.aboutCTA a {
+  text-decoration: none;
   border: none;
   background-color: #17130f;
   color: #f8f5f0;

@@ -204,7 +204,7 @@ const AboutMe = () => {
 
         <p>Get in touch to discuss your requirements and the work you need.</p>
 
-        <button>Contact Me&nbsp; →</button>
+        <a href="/contact-me">Contact Me&nbsp; →</a>
       </section>
 
       {/* ================= FOOTER ================= */}

@@ -94,7 +94,7 @@ const ContactMe = () => {
               <div>
                 <h3>Location</h3>
 
-                <p>Delta State, Nigeria</p>
+                <p>United Kingdom(England)</p>
               </div>
             </div>
           </div>
