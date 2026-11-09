@@ -113,7 +113,7 @@ const ContactMe = () => {
             <div className={contactStyles.cvButtons}>
               {/* VIEW CV */}
               <a
-                href="/Andrew_Jeje_cv.pdf"
+                href="/Andrew_Jeje_cv_work.pdf"
                 target="_blank"
                 rel="noreferrer"
                 className={contactStyles.viewCv}
@@ -123,8 +123,8 @@ const ContactMe = () => {
 
               {/* DOWNLOAD CV */}
               <a
-                href="/Andrew_Jeje_cv.pdf"
-                download="Andrew_Jeje_cv.pdf"
+                href="/Andrew_Jeje_cv_work.pdf"
+                download="Andrew_Jeje_cv_work.pdf"
                 className={contactStyles.downloadCv}
               >
                 Download CV
